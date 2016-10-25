@@ -1,0 +1,32 @@
+---
+- hosts: all
+  sudo: yes
+  remote_user: root
+  tasks:
+      - name: copy file
+        copy: src=app.py dest=/home/vagrant/tp.py
+
+      - name: download get-pip.py
+        get_url: url=https://bootstrap.pypa.io/get-pip.py dest=/tmp/get-pip.py
+
+      - name: install pip
+        command: python /tmp/get-pip.py
+
+      - name: install flask
+        pip:  name=flask
+      - name: install gunicorn 
+        pip:  name=gunicorn
+    
+
+      - name: run server
+        command: gunicorn app:app -D -b 0.0.0.0:5000 chdir=~/
+      - command: python2.7 /home/vagrant/tp.py
+
+  roles:
+     - HanXHX.nginx
+     - mrwilson.sqlite
+     - futurice.pip
+     - futurice.supervisor
+     
+
+
