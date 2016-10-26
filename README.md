@@ -3,6 +3,7 @@ Tp de développement opérationnel :
 SuperSnake
 
 Pour déployer la machine virtuel et l'environnement de travail :
+commande : 
 
 cd Vagrant
 
@@ -10,13 +11,13 @@ vagrant up
 
 Role installed:
 
-Nginx
-Sqlite
-Supervisord
-gunicorn
-flask
+- Nginx
+- Sqlite
+- Supervisord
+- gunicorn
+- flask
 
-Required
+Required : 
 
-vagrant
-ansible
+- vagrant
+- ansible
