@@ -2,7 +2,7 @@
 Tp de développement opérationnel :
 SuperSnake
 
-To deploy the vm:
+Pour déployer la machine virtuel et l'environnement de travail :
 
 cd Vagrant
 
